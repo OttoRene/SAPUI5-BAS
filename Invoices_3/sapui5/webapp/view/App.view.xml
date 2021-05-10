@@ -6,9 +6,10 @@
             <pages>
                 <Page title="{i18n>PageTitle}">
                 <headerContent>
+                <!-- {i18n>helloDialogBut} -->
                     <Button id = "helloDialogHeader"
                             icon="sap-icon://action" 
-                            text="{i18n>helloDialogBut}" 
+                            text="Texto de prueba"   
                             press="onOpenDialogHeader" 
                             class="sapUiSmallMarginEnd"/>
                 </headerContent>

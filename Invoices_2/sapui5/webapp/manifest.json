@@ -1,7 +1,7 @@
 {
-  "_version": "1.12.0",
+  "_version": "1.32.0",
   "sap.app": {
-    "id": "logaligroup.SAPUI5",
+    "id": "sapui5",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -12,8 +12,8 @@
     "resources": "resources.json",
     "ach": "ach",
     "dataSources": {
-      "mainService": {
-        "uri": "/Northwind/V2/Northwind/Northwind.svc/",
+      "Northwind.svc": {
+        "uri": "/V2/Northwind/Northwind.svc/",
         "type": "OData",
         "settings": {
           "odataVersion": "2.0",
@@ -41,10 +41,10 @@
   "sap.ui5": {
     "flexEnabled": false,
     "rootView": {
-      "viewName": "logaligroup.SAPUI5.view.App",
+      "viewName": "sapui5.view.View1",
       "type": "XML",
       "async": true,
-      "id": "App"
+      "id": "View1"
     },
     "dependencies": {
       "minUI5Version": "1.66.0",
@@ -62,15 +62,11 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "logaligroup.SAPUI5.i18n.i18n"
+          "bundleName": "sapui5.i18n.i18n"
         }
       },
-      "invoices": {
-        "type": "sap.ui.model.json.JSONModel",
-        "uri": "Invoices.json"
-      },
-      "northwind": {
-        "dataSource": "mainService",
+      "": {
+        "dataSource": "Northwind.svc",
         "preload": true,
         "settings": {
           "defaultBindingMode": "TwoWay",
@@ -91,17 +87,17 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "logaligroup.SAPUI5.view",
+        "viewPath": "sapui5.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
       },
       "routes": [
         {
-          "name": "RouteApp",
-          "pattern": "RouteApp",
+          "name": "RouteView1",
+          "pattern": "RouteView1",
           "target": [
-            "TargetApp"
+            "TargetView1"
           ]
         }
       ],
@@ -110,8 +106,8 @@
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "App",
-          "viewName": "App"
+          "viewId": "View1",
+          "viewName": "View1"
         }
       }
     }
